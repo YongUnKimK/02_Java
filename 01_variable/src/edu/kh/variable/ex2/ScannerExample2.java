@@ -22,9 +22,9 @@ public class ScannerExample2 {
 		System.out.print("실수 2 입력 : ");
 		double input2 = sc.nextDouble();
 			
-		System.out.printf("%.2d + %2.d = %.2d", input1, input2, (input1 + input2));
-		System.out.printf("%.2d - %2.d = %.2d", input1, input2, (input1 - input2));
-		System.out.printf("%.2d * %2.d = %.2d", input1, input2, (input1 * input2));
-		System.out.printf("%.2d / %2.d = %.2d", input1, input2, (input1 / input2));
+		System.out.printf(" %d + %d = %d", input1, input2, (input1 + input2));
+		System.out.printf(" %d - %d = %d", input1, input2, (input1 - input2));
+		System.out.printf(" %d * %d = %d", input1, input2, (input1 * input2));
+		System.out.printf(" %d / %d = %d", input1, input2, (input1 / input2));
 }
 }

@@ -11,7 +11,8 @@ public class PracticeRun { // 기능 실행 클래스
 //		opEx.practice1();
 //		opEx.practice2();
 //		opEx.practice3();
-		opEx1.practice4();
-	
+//		opEx1.practice4();
+//		opEx1.practice5();
+		opEx1.practice6();
 	}
 }

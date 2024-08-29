@@ -20,29 +20,43 @@ public class OperatorPractice3 {
 	}
 	public void practice5() {
 		
-		Scanner sc5 = new Scanner(System,in);
+		Scanner sc5 = new Scanner(System.in);
 		
-//		
-//		문제2)
-//	ATM에서 사용자가 원하는 금액을 입력하면, 5만원, 1만원, 5천원, 1천원 단위로 최소 개수의 지폐로 돈을 인출하라
-//	ex) 사용자가 123000원을 입력하면, 5만원 지폐 2장, 1만원 지폐 2장, 5천원 지폐 0장, 1천원 지폐 3장이 필요함
-//
-//	메서드 : public void practice2() {}
-//
-//	[실행화면]
-//	출금할 금액 입력 : 123000
-//	50000원: 2
-//	10000원: 2
-//	5000원: 0
-//	1000원: 3
-//
-//
-//	출금할 금액 입력 : 253000
-//	50000원: 5
-//	10000원: 0
-//	5000원: 0
-//	1000원: 3
-//		
-//	}
-	public void practice6() {}
+		System.out.println("출금할 금액 입력");
+		int amount = sc5.nextInt();
+		
+		int fifty = amount / 50000;
+		amount %= 50000;		
+		
+		int tent = amount / 10000;
+		amount %= 10000;
+		
+		int five = amount / 5000;
+		amount %= 5000;
+		
+		int one = amount / 1000;
+		amount %= 1000;
+		
+		System.out.println("50000원 : " + fifty);
+		System.out.println("10000원 : " + tent);
+		System.out.println("5000원 : " + five);
+		System.out.println("10000원 : " + one);
+		
+		
+		
+	}		
+	public void practice6() {
+		
+		Scanner sc6 = new Scanner(System.in);
+		
+		System.out.println("첫 번째 수 : ");
+		int first = sc6.nextInt();
+		System.out.println("두 번째 수 : ");
+		int second = sc6.nextInt();
+		
+		String result = second % first == 0 ? "배수입니다." : "배수가 아닙니다";
+		
+		System.out.println(result);
+		
+	}
 }
