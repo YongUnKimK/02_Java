@@ -1,18 +1,25 @@
 package edu.kh.op.practice.run;
+
 import edu.kh.op.practice.OperatorPractice;
+import edu.kh.op.practice.OperatorPractice2;
 import edu.kh.op.practice.OperatorPractice3;
 
-public class PracticeRun { // 기능 실행 클래스
+public class PracticeRun {
+	
 	public static void main(String[] args) {
 		
-		OperatorPractice opEx = new OperatorPractice();
-		OperatorPractice3 opEx1 = new OperatorPractice3();
+		OperatorPractice op = new OperatorPractice();
+		//op.practice1();
+		//op.practice2();
+		//op.practice3();
 		
-//		opEx.practice1();
-//		opEx.practice2();
-//		opEx.practice3();
-//		opEx1.practice4();
-//		opEx1.practice5();
-		opEx1.practice6();
+		OperatorPractice2 op2 = new OperatorPractice2();
+		//op2.ex();
+		
+		
+		OperatorPractice3 op3 = new OperatorPractice3();
+		//op3.practice1();
+		//op3.practice2();
+		//op3.practice3();
 	}
 }

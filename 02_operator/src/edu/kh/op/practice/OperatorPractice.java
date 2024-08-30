@@ -1,93 +1,123 @@
 package edu.kh.op.practice;
+
 import java.util.Scanner;
-public class OperatorPractice { //기능 제공 클래스
-	public void practice1() {	
-//		모든 사람이 사탕을 골고루 나눠가지려고 한다. 인원 수와 사탕 개수를 키보드로 입력 받고
-//		1인당 동일하게 나눠가진 사탕 개수와 나눠주고 남은 사탕의 개수를 출력하세요.
+
+public class OperatorPractice {
+	
+	public void practice1(){
+		/*
+		 * 
+		 * 모든 사람이 사탕을 골고루 나눠가지려고 한다. 
+		 * 인원 수와 사탕 개수를 키보드로 입력 받고
+			1인당 동일하게 나눠가진 사탕 개수와 나눠주고 남은 사탕의 개수를 출력하세요.
+			
+			[실행화면]
+			인원 수 : 29
+			사탕 개수 : 100
+			
+			1인당 사탕 개수 : 3
+			남는 사탕 개수 : 13
+		 * 
+		 * 
+		 * */
 		
-		// 사탕 개수를 인원 수로 나누고 // 나머지를 출력함.
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.print("인원 수 입력: ");
-		int inputpeople = sc.nextInt(); 
-		System.out.print("사탕 개수 입력: ");				
-		int inputcandy = sc.nextInt();	
-				
-		System.out.printf("1인당 사탕 개수 : %d", inputcandy / inputpeople);
-		System.out.println();
-		System.out.printf("남는 사탕 개수 : %d", inputcandy % inputpeople);
+		System.out.print("인원 수 : ");
+		int input1 = sc.nextInt();
 		
+		System.out.print("사탕 개수 : ");
+		int input2 = sc.nextInt();
+		
+		System.out.printf("1인당 사탕 개수 : %d\n", input2 / input1 );
+		System.out.printf("남은 개수 : %d\n", input2 % input1 );
 	}
-	public void practice2() {	
-//	ex.
-//		이름 : 홍길동
-//		학년(정수만) : 3
-//		반(정수만) : 4
-//		번호(정수만) : 15
-//		성별(남학생/여학생) : 남학생
-//		성적(소수점 아래 둘째 자리까지) : 85.75
-//		3학년 4반 15번 홍길동 남학생의 성적은 85.75이다.;
+	
+	
+	public void practice2(){
 		
-		Scanner sc1 = new Scanner(System.in);
-		System.out.println();
+		/*키보드로 입력 받은 값들을 변수에 기록하고 저장된 변수 값을 화면에 출력하여 확인하세요.
+
+		ex.
+		이름 : 홍길동
+		학년(정수만) : 3
+		반(정수만) : 4
+		번호(정수만) : 15
+		성별(남학생/여학생) : 남학생
+		성적(소수점 아래 둘째 자리까지) : 85.75
+		3학년 4반 15번 홍길동 남학생의 성적은 85.75이다.
+		 * */
+		
+		Scanner sc = new Scanner(System.in);
 		
 		System.out.print("이름 : ");
-		String name = sc1.next();
+		String name = sc.next();
 		
-		System.out.print("학년(정수만) : " );
-		int year = sc1.nextInt();
+		System.out.print("학년 : ");
+		int grade = sc.nextInt();
 		
-		System.out.print("반(정수만) : " );
-		int group = sc1.nextInt();
+		System.out.print("반 : ");
+		int classroom = sc.nextInt();
 		
-		System.out.print("번호(정수만) :" );
-		int number = sc1.nextInt();
+		System.out.print("번호 : ");
+		int number = sc.nextInt();
 		
-		System.out.print("성별(남학생/여학생 :");
-		String gender = sc1.next();
+		System.out.print("성별(남학생/여학생) : ");
+		String gender = sc.next();
 		
-		System.out.print("성적(소수점 아래 둘째 자리까지) : ");
-		System.out.println();
-		float grade = sc1.nextFloat();
-		System.out.printf("%d학년 %d반 %d번 %s %s의 성적은 %f이다. ", 
-				year, group, number, name, gender, grade);
-	
+		System.out.print("성적 : ");
+		double score = sc.nextDouble();
 		
-		
+		System.out.printf("%d학년 %d반 %d번 %s %s의 성적은 %.2f이다.\n", grade, classroom, number, name, gender, score);
 		
 	}
-	public void practice3() {	
-//		메소드 명 : public void practice3(){}
-//		국어, 영어, 수학에 대한 점수를 키보드를 이용해 정수로 입력 받고,
-//		세 과목에 대한 합계(국어+영어+수학)와 평균(합계/3.0)을 구하세요.
-//
-//		[실행화면]
-//		국어 : 60
-//		영어 : 80
-//		수학 : 40
-//		합계 : 180
-//		평균 : 60.0
-		System.out.println();
-		Scanner sc2 = new Scanner(System.in);
+	
+	public void practice3(){
+		
+		/*
+		 * 국어, 영어, 수학에 대한 점수를 키보드를 이용해 정수로 입력 받고,
+		세 과목에 대한 합계(국어+영어+수학)와 평균(합계/3.0)을 구하세요.
+		세 과목의 점수가 각각 40점 이상이면서 평균이 60점 이상일때 합격
+		아니면 불합격을 출력해라
+		
+			[실행화면]
+			국어 : 60
+			영어 : 80
+			수학 : 40
+			합계 : 180
+			평균 : 60.0
+			합격
+		 * */
+		
+		Scanner sc = new Scanner(System.in);
 		
 		System.out.print("국어 : ");
-		int lan = sc2.nextInt();
-		
+		int kor = sc.nextInt();
 		
 		System.out.print("영어 : ");
-		int math = sc2.nextInt();
-		
+		int eng = sc.nextInt();
 		
 		System.out.print("수학 : ");
-		int eng = sc2.nextInt();
-		int sum = lan + math + eng ;
-		float aver = (lan + math + eng) / 3;		
+		int math = sc.nextInt();
 		
+		int sum = kor + eng + math; // 합계
+		double avg = sum / 3.0; // 평균
 		
-		System.out.println("합계 : " + (lan + math + eng));
-		System.out.printf("평균 : "  + aver );
+		System.out.println("합계 : " + sum);
+		System.out.printf("평균 : %.1f\n" , avg);
 		
+		boolean result = (kor >= 40) && (eng >= 40) && (math >= 40) && (avg >= 60);
+		
+		System.out.println( result ? "합격" : "불합격" );
 		
 	}
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }
