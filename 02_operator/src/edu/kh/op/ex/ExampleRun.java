@@ -11,11 +11,12 @@ public class ExampleRun { // 코드 실행용 클래스
 		OpExample opEx = new OpExample();
 		// 같은 패키지 (edu.kh.op.ex) 안에 있는 클래스는
 		// import를 하지 않아도 불러다 쓸 수 있다!
+		// sc.nextLine(); 입력버퍼 비우는 일 ( 개행문자 비우기 ) 
 		
 		//opEx.ex1(); // opEx가 가지고 있는 ex1() 메서드 실행
 		//opEx.ex2();
 		//opEx.ex3();
-		opEx.ex4();
+//		opEx.ex4();
 		
 		
 		
