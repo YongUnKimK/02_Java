@@ -12,7 +12,7 @@ public class Run {
 //		condition.practice2();
 //		condition.practice3();
 //		condition.practice4();
-		condition.practice5();
+//		condition.practice5();
 		
 	}
 }

@@ -13,7 +13,8 @@ public class ConditionPractice {
 		
 		System.out.print(" 숫자를 한 개 입력하세요 :");
 		int num = sc.nextInt();
-		if (num <= 0) {System.out.println("양수만 입력해 주십시오");}		
+		if (num <= 0) 
+		{System.out.println("양수만 입력해 주십시오");}		
 		else if(num % 2 == 0) {
 			System.out.println("짝수입니다");
 		} else {System.out.println("홀수입니다.");}
@@ -32,14 +33,14 @@ public class ConditionPractice {
 		System.out.print("영어 점수 :");
 		int eng = sc.nextInt();
 		int sum = lan + math + eng;
-		float aver = sum / 3;
+		double avg = sum / 3.0;
 		
-		if(lan >= 40 & math >= 40 && eng >= 40 && aver >= 60 ) {
+		if(lan >= 40 & math >= 40 && eng >= 40 && avg >= 60 ) {
 			System.out.println("국어 :" + lan );
 			System.out.println("수학 :" + math );
 			System.out.println("영어 :" + eng );
 			System.out.println("합계 :" + sum );
-			System.out.println("평균 :" + aver );
+			System.out.println("평균 :" + avg );
 			System.out.println("축하합니다, 합격입니다!");			
 		} else {System.out.println("불합격입니다.");}
 		
@@ -54,15 +55,24 @@ public class ConditionPractice {
 //		(2월윤달은생각하지않습니다.)
 //		잘못입력한경우“OO월은잘못입력된달입니다.”를출력하세요. 
 		System.out.print("1~12 사이의정수입력 : ");
-		int month = sc.nextInt();
-		int day = 0;	
+		int month = sc.nextInt();		
 		switch (month) {
 		case 1,3,5,7,8,10,12 : System.out.printf("%d 월은 31일까지 있습니다",month);; break;
-		case 2,4,6,9,11 : System.out.printf("%d 월은 30일까지 있습니다",month); break;
-		default : System.out.printf("%d 월은 잘못입력된 달입니다", month );break;
+		case 4,6,9,11 : System.out.printf("%d 월은 30일까지 있습니다",month); break;
+		case 2 : System.out.printf("%d 월은 28일까지 있습니다",month);break;
+		default : System.out.printf("%d 월은 잘못입력된 달입니다", month );
 		
 		}
-		
+//		System.out.print("1~12 사이의정수입력 : ");
+//		int month = sc.nextInt();		
+//		switch (month) {
+//		case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+//		System.out.printf("%d 월은 31일까지 있습니다",month);; break;
+//		case 2: System.out.printf("%d 월은 28일까지 있습니다",month); break;
+//		case 4: case 6: case 9: case 11:
+//		System.out.printf("%d 월은 30일까지 있습니다",month); break;
+//		default : System.out.printf("%d 월은 잘못입력된 달입니다", month );
+//		}
 		
 		
 	}
@@ -112,18 +122,32 @@ public class ConditionPractice {
 		float as = sc.nextFloat();
 		
 		System.out.print("출석 횟수");
-		int attend = sc.nextInt();
+		float attend = sc.nextFloat();
 		
 		double midscore = middle * 0.2;
 		double endscore = end * 0.3;
 		double asscore = as * 0.3;
-		double attends = attend;
-				
-		int last = (int)(midscore + endscore + asscore + attends);
-		System.out.println("합계 : " + last );
-		if (attend * 5 <= 30 ) { System.out.printf("Fail [출석횟수부족( %d / 20]",attend);} 
-		else if (last >= 70 ) { System.out.println(" Pass"); }
-		else {System.out.println("Fail [점수미달]");}
+		float attends = attend;
+		float last = (float)(midscore + endscore + asscore + attends);
+		
+		System.out.println("결과 ===============================================");	
+		
+		
+		if (attend * 5 <= 30 ) { System.out.printf("Fail [출석횟수부족( %.0f / 20)]",attend);} 
+		else if (last >= 70 ) { 
+			System.out.printf("중간고사점수(20) : %.1f\n", midscore);
+			System.out.printf("기말고사점수(30) : %.1f\n", endscore);
+			System.out.printf("과제점수(30) : %.1f\n", asscore);
+			System.out.printf("출석점수(20) : %.1f\n", attends);
+			System.out.printf("총점 : %.1f\n", last);	
+			System.out.println(" Pass"); }
+		else {
+			System.out.printf("중간고사점수(20) : %.1f\n", midscore);
+			System.out.printf("기말고사점수(30) : %.1f\n", endscore);
+			System.out.printf("과제점수(30) : %.1f\n", asscore);
+			System.out.printf("출석점수(20) : %.1f\n", attends);
+			System.out.printf("총점 : %.1f\n", last);	
+			System.out.println("Fail [점수미달]");}
 				
 				
 				
