@@ -13,6 +13,9 @@ public class Run {
 //		condition.practice3();
 //		condition.practice4();
 //		condition.practice5();
+//		condition.practice6();
+//		condition.practice7();
+//		condition.practice8();
 		
 	}
 }

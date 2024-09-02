@@ -142,13 +142,159 @@ public class LoopPractice { //기능 제공 클래스
 			String first = "";
 			for ( int i1 = 1; i1 <= num; i1++) {
 			
-			first += "*";
-			System.out.println(first);}
+			first += "*";			
+			System.out.println(first);}	
+		
+	}
+
+	public void practice8() {
+		System.out.print(" 정수 입력 : ");
+		
+		int num = sc.nextInt();
 		
 		
+		for(int i = 1; i <= num ; i++) {
+			for(int j = num ; j >= i ; j--) {
+				System.out.print("*");
+			} System.out.println();
+		}
+			// 내가 입력한 input값을 row에 대입하여 반복할떄마다 1씩 감소함
 		
+			
 		
 		
 	}
+	
+	public void practice9() {
+//		정수입력: 4
+//		    *
+//		   **
+//		  ***
+//		 ****
+		System.out.print( " 정수 입력 : ");
+		
+		int num = sc.nextInt();
+		for(int i = 1 ; i <= num; i++) {
+			
+			for(int j = num; j > i ; j--) {
+			System.out.print(" ");				
+			}
+			for(int k = 1; k < i+1; k++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+		
+	}
+	
+	public void practice10() {
+		
+//		 정수입력: 3
+//	  *
+//	  **
+//	  ***
+//	  **
+//	  *
+		System.out.print( " 정수 입력 : ");
+		
+		int num = sc.nextInt();
+		for(int i = 1; i <= num; i++) {
+			for(int j = 1; j <= i; j++) {
+				System.out.print("*");
+				
+			} System.out.println();
+		}
+		
+		for (int i1 = num-1; i1 >= 1; i1-- ) {
+			for(int j2 = 1; j2 <= i1; j2++) {
+				System.out.print("*");
+			} System.out.println();
+			
+		}
+
+	}
+	public void practice11() { 
+// 정수입력 : 4      왼쪽에서부터 공백 포함
+//		   *		input(4) + row(1) - 1 == 4 ( 한 행에 열(col)이 4번 반복해 공백or별을찍음
+//		  ***		input(4) + row(2) - 1 == 5 
+//		 *****
+//		*******
+		
+		
+		
+		
+		
+		
+		
+		
+		System.out.print( " 정수 입력 : ");
+		
+		int num = sc.nextInt();
+		
+		
+		for(int i = 1; i <= num ; i++ ) {
+			
+			for(int i1 = num-i ; i1 > 0; i1-- ) {System.out.print(" ");
+				
+			} 
+			for (int j=1; j<=i*2-1; j++) {
+                System.out.print("*");
+            }
+             System.out.println();
+			
+		}
+		
+		
+
+		
+		
+	}
+
+	public void practice12() {
+//		정수입력: 5
+//		 *****
+//		 *   *
+//		 *   *
+//		 *   *
+//		 *****
+		System.out.print( " 정수 입력 : ");		
+		int num = sc.nextInt();
+		for(int i=1 ; i <=num ; i++) {
+			
+			for(int i1 = 1; i1 <= num; i1 ++ ) {
+				
+				if(i1 ==1 || i1 == num || i == 1 || i ==num) {
+					System.out.print("*");
+				} else {System.out.print(" ");}
+			}
+
+			System.out.println();
+		}
+		
+		
+	}
+	
+	
+	public void practice13() {
+		System.out.print("자연수 하나를 입력하세요 : ");
+		int input = sc.nextInt();
+		
+		int count = 0;
+		
+		for(int i = 1; i <= input; i++) {
+			
+			// 2의 배수 또는 3의 배수인 경우 출력
+			if(i % 2 == 0 || i % 3 ==0 ) {
+				System.out.print(i + " ");
+			
+				if(i % 2 == 0 && i % 3 ==0 ) {
+					// 갯수세기 
+					count++;
+				}				
+			}							
+		}				
+		System.out.println("\ncount : " + count );
+	}
+	
 }	
 
