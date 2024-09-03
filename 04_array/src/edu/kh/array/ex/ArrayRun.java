@@ -18,8 +18,8 @@ public class ArrayRun {
 //		arrayEx1.ex8();
 //		arrayEx1.ex9();
 //		arrayEx2.shallowCopy();
-		arrayEx2.deepCopy();
-		
+//		arrayEx2.deepCopy();
+		arrayEx2.createLottoNumber();
 	}
 
 }
