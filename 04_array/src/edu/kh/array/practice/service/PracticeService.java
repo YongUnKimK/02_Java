@@ -33,6 +33,7 @@ public class PracticeService { // 기능 제공 클래스
 		
 		
 	}
+	
 	public void practice2() {
 		
 //		길이가9인배열을선언및할당하고,
@@ -91,8 +92,8 @@ public class PracticeService { // 기능 제공 클래스
 		boolean flag = false;		
 		for ( int i = 0; i< arr.length; i++) {
 			if(search == arr[i] ) {
-				System.out.print("인덱스 : " + i);
-				flag = true;
+				System.out.println("인덱스 : " + i);
+				flag = true; break;
 			} 
 			
 		} if (flag != true ) {
@@ -160,6 +161,7 @@ public class PracticeService { // 기능 제공 클래스
 		for(int i = 0; i < number.length; i++) {
 			System.out.print(number[i] + " ");
 		}
+		System.out.println();
 		System.out.print("총 합 : " + sum);
 
 		
@@ -208,13 +210,13 @@ public class PracticeService { // 기능 제공 클래스
 		for (int i = 0; i <= number.length / 2 ; i++) {
 			System.out.print(i+1 + ", ");
 			
-		}String str = "";
+		} String str = "";
 		for (int i = number.length / 2 ; i >= 1 ; i--) {
 			
 			str += ( i + ", ");
 			
 		}	str = str.substring(0, str.length() - 2);
-				System.out.print( str);	
+				System.out.print( str );	
 	}
 	
 	public void practice9() {
@@ -228,6 +230,7 @@ public class PracticeService { // 기능 제공 클래스
 			num[i] = (int)(Math.random() * 10 + 1);
 		} 
 		System.out.print("발생한 난수 : ");
+		
 		for(int i = 0 ; i < num.length; i++) {
 			System.out.print(num[i] + " ");
 		}
@@ -288,16 +291,146 @@ public class PracticeService { // 기능 제공 클래스
 			for( int x = 0 ; x < i; x++ ) {
 				if(number == num[x]) {
 					i--;
-					break;
+					
 					
 				}
 				
 			}
 			
-		} System.out.print(Arrays.toString(num));
+		} 
+//		System.out.print(Arrays.toString(num));
+		
+		for (int i = 0; i <num.length; i++) {
+			System.out.print(num[i] + " ");
+		}
 		
 		
 		
+		
+		
+	}
+
+	public void practice12() {
+//		로또번호자동생성기프로그램을만들기.
+//		 (중복값없이오름차순으로정렬하여출력하세요.)
+		
+		int[] lotto = new int [6];
+		for(int i = 0 ; i < lotto.length; i++ ) {
+			int number = (int)(Math.random() * 45 + 1);
+			 lotto[i] = number;
+			for(int j = 0; j < i;  j++) {
+				if( number == lotto[j]) {
+					i--;
+				}				
+			}
+		} for ( int i = 0 ; i < lotto.length; i++) {
+			Arrays.sort(lotto);
+			System.out.print(lotto[i] + " ");
+		}
+		
+		
+	}
+
+	public void practice13() {
+//		문자열을입력받아문자열에
+//		어떤문자가들어갔는지배열에저장하고
+//		문자의개수와함께출력하세요
+		System.out.print("문자열 : ");
+		String lan = sc.nextLine();
+		
+		char[] arr = new char[lan.length()];
+		
+		for(int i = 0 ; i < arr.length; i++ ) {
+			arr[i] = lan.charAt(i);
+		} 
+		int count = 0;
+		
+		System.out.print("문자열에 있는 문자 : ");
+		for (int i = 0 ; i <arr.length; i++) {
+			
+			boolean flag = true; // 중복 체크용 flag
+			
+			// for문
+			for (int j = 0 ; j < i ; j++) {
+				
+				if(arr[i] == arr[j]) {
+					flag = false;; // 중복 발생했을 떄 
+					break;
+				}
+			}
+			
+			if(flag== true) { //중복이 발생하지 않았을 경우
+				if (i==0) {
+					System.out.print(arr[i]);
+				} else {
+					System.out.print(", " + arr[i]);
+				} count++;
+				
+			} 
+			
+		}
+		System.out.println();
+		System.out.print("문자 개수 : " + count);
+			
+		
+	}
+	
+	public void practice14() {
+		
+//		사용자가입력한배열의길이만큼의문자열배열을선언및할당하고
+//		배열의인덱스에넣을값역시사용자가입력하여초기화하세요.
+//		단, 사용자에게배열에값을더넣을지물어보고몇개를더입력할건지,
+//		늘린곳에어떤데이터를넣을것인지받으세요.
+//		사용자가더이상입력하지않겠다고하면배열전체값을출력하세요.
+		
+		System.out.print("배열의 크기를 입력하세요 : ");
+		int size = sc.nextInt();
+		sc.nextLine(); // 입력버퍼에 남은 개행문자제거
+		String[] arr = new String[size];
+		
+		// 2. 첫 배열에 저장할 문자열 입력받기
+		for ( int i = 0 ; i < arr.length; i++) {
+			System.out.print((i+1) +  "번째 문자열 : ");
+			arr[i] = sc.nextLine();
+			
+		}
+		// 3. 반복이 시작되는 구간부터 무한반복하는 while작성
+		//	내부에 종료조건 만들어서 break
+		
+		while(true) {
+			System.out.println("더 값을 입력하시겠습니까?(Y/N) : ");
+			char ch = sc.nextLine().charAt(0);
+			
+			// 4 . 값을 더 입력할 경우!
+			if(ch == 'y'|| ch== 'Y') {
+				
+				//5. 더 입력받을 개수 입력 받기
+				System.out.print("더 입력하고 싶은 개수 : ");
+				int addsize = sc.nextInt();
+				sc.nextLine(); //입력버퍼에 남은 개행문자 제거쓰
+				
+				// 6. 새로 값을 입력받은 배열 생성 --> 기존배열 크기 + 추가입력 개수
+				String[] newArr = new String[arr.length + addsize];
+				
+				// 7. 배열 복사 + 새로운 문자열 입력받기
+				for(int i = 0; i < newArr.length; i++) {
+					
+					if (i < arr.length) { // 인덱스의 크기가 기존배열보다 작을 경우
+						newArr[i] = arr[i];
+					} else { // 인덱스 크기가 기존 배열보다 클 경우 새로운 입력 받기
+						System.out.print((i+1) + "번쨰 문자열 : ");
+						newArr[i] = sc.nextLine();						
+					}
+				} 
+				// 8. 기존 배열 공간을 참조하던 변수 arr에 새로운 배열 공간의 주소 newArr대입
+				arr = newArr;				
+			} else if(ch == 'n' || ch == 'N') { //값을 더 입력하지 않을 경우
+				break;
+			} else { //잘못 입력한 경우
+				System.out.println("잘못 입력하셨습니다. 다시 입력해 주세요.");
+			}		
+		}
+			System.out.println(Arrays.toString(arr));
 		
 	}
 }
