@@ -121,7 +121,9 @@ public class People { // 국민[사람] 클래스
 	}
 
 	public void setAge(int age) {
-		this.age = age;
+		
+			this.age = age; 
+		
 	}
 	
 	

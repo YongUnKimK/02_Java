@@ -105,7 +105,7 @@ public class ArrayExample2 {
 			lotto[i] = random;
 			
 			// 5) 중복검사 위한 for문 작성하기 응애~
-		    for(int x = 0; x < x; x++) {
+		    for(int x = 0; x < i; x++) {
 		    	
 		    	// 6) 현재 생성된 난수와 같은 수가
 		    	// 앞쪽 요소에 있는지 검사

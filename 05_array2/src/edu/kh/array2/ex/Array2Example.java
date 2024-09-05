@@ -1,7 +1,7 @@
 package edu.kh.array2.ex;
 
 import java.util.Arrays;
-
+import java.util.Scanner;
 public class Array2Example { //기능제공용 클래스
 
 	/* 2차원 배열
@@ -144,6 +144,8 @@ public class Array2Example { //기능제공용 클래스
 		} System.out.print(Arrays.deepToString(arr));
 				
 	}
+	
+	
 	
 	
 	
