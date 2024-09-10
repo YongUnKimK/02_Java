@@ -57,10 +57,11 @@ public class MemberService {
 			case 1 : System.out.println(signUp()); break;
 			case 2 : System.out.println(login()); break;
 			case 3 : System.out.println(selectMember()); break;
-			case 4 : 
-				if ((updateMember() == -1)) { System.out.println("로그인을 먼저 진행해 주세요"); }
-				else if ((updateMember() == 1)) { System.out.println("정보 수정 완료");}
-				else if ((updateMember() == 0)) { System.out.println("비밀번호 틀림");
+			case 4 : int result = updateMember(); // -1 , 0 , 1;
+				if  (result == -1) { System.out.println("로그인을 먼저 진행해 주세요"); }
+				else if  (result == 1) { System.out.println("정보 수정 완료");}
+				else { System.out.println("비밀번호 틀림");
+				 
 				}break;
 			case 5 : searchRegion(); break;
 			case 0 : System.out.println("프로그램을 종료합니다"); break;
@@ -230,10 +231,12 @@ public class MemberService {
 				return "이름 : " + loginMember.getMemberName() + "\n" 
 						+ "아이디 : " + loginMember.getMemberId() + "\n"
 						+ "나이 : " + loginMember.getMemberAge() + "\n"
-						+ "지역 : " + loginMember.getRegion();
-				
+						+ "지역 : " + loginMember.getRegion(); }
 			}
+		
+				
 			
+		
 			
 			
 			
@@ -244,44 +247,44 @@ public class MemberService {
 			// 나이 : 20
 			// 지역 : 서울
 			
-		}
+		
 		
 		
 		public int updateMember() {
 			
 			System.out.println("============회원 정보 수정 절차입니다=============");
 			
-			if ( loginMember == null) {
-				return -1; 
+			if ( loginMember == null) {				
+				return -1 ;
 			} 
-			else {System.out.println("수정할 이름 : ");
+			
+			System.out.print("수정할 이름 : ");
+			
+			String inputName = sc.next();
+		
+			System.out.print("수정할 나이 : ");
+			int inputAge = sc.nextInt();
+		
+			System.out.print("수정할 지역 : ");
+			String inputRegion = sc.next();
+			
+			System.out.print("비밀번호를 입력해주세요");
+			String inputPw = sc.next(); 
+			
+			if( inputPw.endsWith(loginMember.getMemberPw())) {
+				loginMember.setMemberName(inputName);
+				loginMember.setMemberAge(inputAge);
+				loginMember.setRegion(inputRegion);
 				
-				String name = sc.next();
-			
-				System.out.println("수정할 나이 : ");
-				int age = sc.nextInt();
-			
-				System.out.println("수정할 지역 : ");
-				String region = sc.next();
+				return 1;
+			} else {
+				return 0;
+			}
+		
+		
+		}
+		
 				
-				System.out.println("비밀번호를 입력해주세요");
-				String pw = sc.next();
-				sc.nextLine();
-				for ( int i = 0 ; i < memberArr.length; i++) {
-					if (memberArr[i].getMemberPw()== loginMember.getMemberPw() ) {
-					memberArr[i].setMemberName(name);	
-					memberArr[i].setMemberAge(age);	
-					memberArr[i].setRegion(region);	
-						return 1;
-						
-					
-				} break;
-				
-			}{ return 0 ;}	
-			
-			}}
-			
-			
 			
 			// 1) 로그인 여부 판별 -> 로그인이 되어있지 않으면 -1반환
 			
@@ -297,24 +300,5 @@ public class MemberService {
 			
 			// 5) 비밀번호가 다른 경우 0 반환
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	
-	
 }
+		
