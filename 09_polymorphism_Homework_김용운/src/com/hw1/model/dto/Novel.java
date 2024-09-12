@@ -23,7 +23,7 @@ public class Novel extends Book {
 	@Override
 	public void displayInfo() {
 		System.out.println("제목 : " + getTitle() 
-				+ " / " + "저자 : " + getAuthor() + "장르 : " + getGenre());  	
+				+ " / " + "저자 : " + getAuthor() + "장르 : " + genre);  	
 		
 	}
 

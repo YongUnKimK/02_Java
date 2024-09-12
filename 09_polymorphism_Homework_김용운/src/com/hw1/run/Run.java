@@ -28,6 +28,12 @@ public class Run {
 			arr[i].displayInfo();
 			
 		}
+		// for ( Book book : arr ) {
+		//	 book.displayInfo();
+		//	System.out.println();}
+		//
+		//
+		//
 	}
 
 }

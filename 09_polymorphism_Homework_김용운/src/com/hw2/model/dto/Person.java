@@ -31,7 +31,7 @@ public abstract class Person {
 		this.name = name;
 	}
 	
-	abstract String getInfo();
+	public abstract String getInfo();
 	
 	
 }

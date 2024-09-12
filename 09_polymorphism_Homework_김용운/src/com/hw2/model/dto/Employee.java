@@ -27,9 +27,13 @@ public class Employee extends Person {
 	}
 
 	@Override
+	public
 	String getInfo() {
 		// TODO Auto-generated method stub
-		return null;
+		return String.format("Id :  %s, 이름 : %s, 직책 : %s", 
+				id , name, position);
+		// id와 name은 Person에서 Protected로 만들어졌기 때문에
+		// 후손클래스에서 직접 접 근 가능
 	}
 	
 	
