@@ -9,9 +9,9 @@ public class Monkey extends Animal {
 	}
 
 	@Override
-	void sound() {
+	public void sound() {
 		// TODO Auto-generated method stub
-		System.out.println("우끼끼 소리를 냅니다");
+		System.out.println(name + "가 우끼끼 소리를 냅니다");
 	};
 	
 }

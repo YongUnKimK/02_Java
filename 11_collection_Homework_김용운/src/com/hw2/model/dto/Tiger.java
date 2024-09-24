@@ -10,8 +10,8 @@ public class Tiger extends Animal {
 	}
 
 	@Override
-	void sound() {
-		System.out.println("어흥하며 포효합니다");
+	public void sound() {
+		System.out.println(name + "가 어흥하며 포효합니다");
 		
 	}
 

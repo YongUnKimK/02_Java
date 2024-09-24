@@ -13,6 +13,7 @@ public class Run {
 		Tiger tiger = new Tiger();
 		Monkey monkey = new Monkey();
 		
+		
 		tiger.setName("호랑이");	
 		monkey.setName("원숭이");
 		
@@ -20,7 +21,8 @@ public class Run {
 		zoo.addAnimal(tiger);
 		zoo.addAnimal(monkey);
 		
-		System.out.println(zoo);
+		System.out.println();
+		
 		zoo.displayMenu();
 	}
 
